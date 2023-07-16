@@ -53,7 +53,7 @@ const Header = () => {
   const searchQueryHandler = (event) => {
     if (event.key === "Enter" && query.length > 0) {
       navigate(`/search/${query}`);
-      window.location.reload();
+      //window.location.reload();
       setTimeout(() => {
         setShowSearch(false);
       }, 1000);
