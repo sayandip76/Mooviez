@@ -1,0 +1,245 @@
+@import "../../../mixins.scss";
+
+.personalDetailsBanner {
+    width: 100%;
+    background-color: var(--black);
+    padding-top: 100px;
+    margin-bottom: 50px;
+
+    @include md {
+        margin-bottom: 0;
+        padding-top: 120px;
+        min-height: 700px;
+    }
+
+    .content {
+        display: flex;
+        position: relative;
+        flex-direction: column;
+        gap: 25px;
+
+        @include md {
+            gap: 50px;
+            flex-direction: row;
+        }
+
+        .left {
+            flex-shrink: 0;
+
+            .posterImg {
+                width: 100%;
+                display: block;
+                border-radius: 12px;
+
+                @include md {
+                    max-width: 350px;
+                }
+            }
+
+            .socialIcons {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 10px;
+                padding: 20px;
+                :visited {
+                    color: white;
+                }
+
+                .icon {
+                    width: 50px;
+                    height: 50px;
+                    color: white;
+                    border-radius: 50%;
+                    background-color: var(--black);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    cursor: pointer;
+                    transition: all ease 0.3s;
+
+                    &:hover {
+                        box-shadow: 0 0 0.625em var(--pink);
+                        color: var(--pink);
+                    }
+                }
+            }
+        }
+
+        .right {
+            color: white;
+
+            .name {
+                font-size: 28px;
+                line-height: 40px;
+
+                @include md {
+                    font-size: 34px;
+                    line-height: 44px;
+                }
+            }
+
+            .profession{
+                font-size: 16px;
+                line-height: 24px;
+                margin-bottom: 15px;
+                font-style: italic;
+                opacity: 0.5;
+
+                @include md {
+                    font-size: 20px;
+                    line-height: 28px;
+                }
+            }
+
+            .biography {
+                margin-bottom: 25px;
+
+                .heading {
+                    font-size: 24px;
+                    margin-bottom: 0;
+                }
+
+                .bio {
+                    .full-content {
+                        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+                        line-height: 24px;
+
+
+                        @include md {
+                            padding: 0;
+                        }
+
+                        .description {
+                            padding: 0;
+
+                            .textSlices {
+                                display: flex;
+                                flex-direction: column;
+                                flex-wrap: nowrap;
+                                align-items: flex-start;
+                                margin: 20px 0;
+                            }
+                        }
+                    }
+
+                    .read_more_less {
+                        font-size: 18px;
+                        font-weight: 600;
+                        color: orangered;
+                        cursor: pointer;
+                    }
+                }
+
+                .show-text {
+                    max-height: none;
+                }
+
+                .hide-text {
+                    max-height: 250px;
+                    overflow: hidden;
+                    position: relative;
+                }
+
+                .hide-text::before {
+                    content: "";
+                    width: 100%;
+                    height: 30px;
+                    position: absolute;
+                    bottom: 0;
+                    right: 0;
+                    background-image: linear-gradient(to bottom, transparent, var(--black) 98%);
+                    pointer-events: none;
+                }
+
+
+            }
+
+            .personal {
+                border-top: 1px solid rgba(255, 255, 255, 0.1);
+                padding: 20px 0 0;
+                color: rgb(79, 155, 209);
+                z-index: 0;
+
+                .info {
+                    color: white;
+                    border: none;
+                    padding: 15px 0;
+                    display: flex;
+
+                    .infoItem {
+                        margin-right: 10px;
+                        display: flex;
+                        flex-flow: row wrap;
+                    }
+
+                    .text {
+                        margin-right: 10px;
+                        opacity: 0.5;
+                        line-height: 24px;
+
+                        &.bold {
+                            font-weight: 600;
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .personalDetailsBannerSkeleton {
+        display: flex;
+        position: relative;
+        flex-direction: column;
+        gap: 25px;
+
+        @include md {
+            gap: 50px;
+            flex-direction: row;
+        }
+
+        .contentWrapper {
+            display: flex;
+            gap: 50px;
+        }
+
+        .left {
+            flex-shrink: 0;
+            width: 100%;
+            display: block;
+            border-radius: 12px;
+            aspect-ratio: 1/1.5;
+
+            @include md {
+                max-width: 350px;
+            }
+        }
+
+        .right {
+            width: 100%;
+
+            .row {
+                width: 100%;
+                height: 25px;
+                margin-bottom: 20px;
+                border-radius: 50px;
+
+                &:nth-child(2) {
+                    width: 75%;
+                    margin-bottom: 50px;
+                }
+
+                &:nth-child(5) {
+                    width: 50%;
+                    margin-bottom: 50px;
+                }
+            }
+        }
+    }
+
+    .end-details {
+        opacity: 0.2;
+        margin: 30px 0;
+    }
+}
