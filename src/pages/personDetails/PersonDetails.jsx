@@ -12,7 +12,7 @@ const PersonDetails = () => {
       <PersonDetailsBanner />
       <Carousel
         title="Known For"
-        data={data?.cast?.length > 20 ? data?.cast.slice(0, 20) : data?.cast}
+        data={data?.cast}
         loading={loading}
       />
     </div>

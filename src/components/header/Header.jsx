@@ -47,7 +47,7 @@ const Header = () => {
     else navigate("/explore/tv");
     setMobileMenu(false);
   };
-
+  
   const searchQueryHandler = (event) => {
     if (event.key === "Enter" && query.length > 0) {
       navigate(`/search/${query}`);
