@@ -114,9 +114,13 @@ const Header = () => {
                 <VscChromeClose onClick={() => setShowSearch(false)} />
               ) : (
                 <HiOutlineSearch
-                  onClick={() =>
-                    query.length > 0 && navigate(`/search/${query}`)
-                  }
+                  onClick={() => {
+                    query.length > 0 && navigate(`/search/${query}`);
+                    window.location.reload();
+                    setTimeout(() => {
+                      setShowSearch(false);
+                    }, 1000);
+                  }}
                 />
               )}
             </div>
